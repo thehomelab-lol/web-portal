@@ -1,0 +1,61 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Cobalt2 Palette */
+    --cobalt-bg: #193549;
+    --cobalt-dark-bg: #121212; /* User requested Dark Grey */
+    --cobalt-text: #FFFFFF;
+    --cobalt-yellow: #FFC600;
+    --cobalt-blue: #0088FF;
+    --cobalt-mint: #3AD900;
+    
+    /* PaperMod Overrides */
+    --theme: var(--cobalt-dark-bg);
+    --entry: #1e1e2e; /* Slightly lighter for cards */
+    --primary: var(--cobalt-yellow);
+    --secondary: #808080;
+    --gap: 24px;
+    --content-gap: 20px;
+    
+    /* Typography */
+    --font: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--theme);
+    color: var(--cobalt-text);
+}
+
+/* Code Blocks */
+.post-content pre {
+    background-color: #15232d !important; /* Cobalt2 dark blue/grey */
+    border-radius: 6px;
+    border: 1px solid #354656;
+}
+
+.post-content code {
+    font-family: var(--font-code);
+    font-variant-ligatures: normal;
+}
+
+/* Syntax Highlighting Tweaks (if needed to match Cobalt2 better) */
+.chroma .k { color: #ffc600; } /* Keywords - Yellow */
+.chroma .s { color: #3ad900; } /* Strings - Mint */
+.chroma .c { color: #0088ff; font-style: italic; } /* Comments - Blue */
+
+/* Copy Button */
+.copy-code {
+    background-color: var(--cobalt-blue);
+    color: white;
+    border-radius: 4px;
+}
+
+/* Edit on GitHub Button */
+.post-footer {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}

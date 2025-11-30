@@ -4,21 +4,41 @@ title = "TheHomeLab"
 theme = "PaperMod"
 
 [params]
-  defaultTheme = "dark"
+  defaultTheme = "dark" # Force dark mode
   ShowCodeCopyButtons = true
-  mainSections = ["docs", "posts"]
+  mainSections = ["blog", "docs"]
+  
+  # "Edit on GitHub" configuration
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowShareButtons = false
+  editPost = { URL = "https://github.com/drusho/thehomelab-web/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
 
   [params.assets]
     favicon = "<link / url to icon>"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "dracula" # Closest built-in to Cobalt2, will customize via CSS if needed
+
 [menu]
   [[menu.main]]
-    identifier = "docs"
-    name = "Documentation"
-    url = "/docs/"
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
     weight = 10
   [[menu.main]]
-    identifier = "youtube"
-    name = "YouTube"
-    url = "https://youtube.com/@YourChannel"
+    identifier = "docs"
+    name = "Docs"
+    url = "/docs/"
     weight = 20
+  [[menu.main]]
+    identifier = "uses"
+    name = "Uses"
+    url = "/uses/"
+    weight = 30
