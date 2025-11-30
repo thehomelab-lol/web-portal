@@ -1,0 +1,6 @@
+name = "thehomelab"
+compatibility_date = "2024-11-30"
+
+# This tells Cloudflare: "Don't look for a script. Just serve these files."
+[assets]
+directory = "public"
