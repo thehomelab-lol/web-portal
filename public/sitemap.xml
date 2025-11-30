@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://thehomelab.lol/docs/</loc>
+    <lastmod>2025-11-30T13:11:11-07:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/docs/hello-world/</loc>
+    <lastmod>2025-11-30T13:11:11-07:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/</loc>
+    <lastmod>2025-11-30T13:11:11-07:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/blog/</loc>
+  </url><url>
+    <loc>https://thehomelab.lol/categories/</loc>
+  </url><url>
+    <loc>https://thehomelab.lol/tags/</loc>
+  </url><url>
+    <loc>https://thehomelab.lol/uses/</loc>
+  </url>
+</urlset>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Documentation on TheHomeLab</title>
+    <link>https://thehomelab.lol/docs/</link>
+    <description>Recent content in Documentation on TheHomeLab</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Nov 2025 13:11:11 -0700</lastBuildDate>
+    <atom:link href="https://thehomelab.lol/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://thehomelab.lol/docs/hello-world/</link>
+      <pubDate>Sun, 30 Nov 2025 13:11:11 -0700</pubDate>
+      <guid>https://thehomelab.lol/docs/hello-world/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
