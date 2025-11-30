@@ -6,16 +6,13 @@ theme = "PaperMod"
 [params]
 defaultTheme = "dark"
 ShowCodeCopyButtons = true
-mainSections = ["blog", "guides"]
+mainSections = ["blog", "guides", "stack"]
 
 # "Edit on GitHub" configuration
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowShareButtons = false
-editPost = {
-URL = "https://github.com/drusho/thehomelab-web/edit/main/content",
-Text = "Edit this page on GitHub", appendFilePath = true
-}
+editPost = { URL = "https://github.com/drusho/thehomelab-web/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
 
 [params.assets]
 favicon = "<link / url to icon>"
@@ -33,11 +30,11 @@ url = "/guides/"
 weight = 20
 [[menu.main]]
 identifier = "gear"
-name = "Hardware"
+name = "Gear"
 url = "/gear/"
 weight = 30
 [[menu.main]]
 identifier = "stack"
-name = "Software"
+name = "Stack"
 url = "/stack/"
 weight = 40

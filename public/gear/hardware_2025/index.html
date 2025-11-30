@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="dark">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>The Lab: Hardware &amp; Specs | TheHomeLab</title>
+<meta name="keywords" content="homelab, hardware, infrastructure">
+<meta name="description" content="A detailed breakdown of the silicon powering TheHomeLab.lol, from 2.5GbE networking to N5105-powered storage.">
+<meta name="author" content="">
+<link rel="canonical" href="https://thehomelab.lol/gear/hardware_2025/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3afd6b1eadf94f615756530f1151a0316444e605bfba1871a03d5fe35a451369.css" integrity="sha256-Ov1rHq35T2FXVlMPEVGgMWRE5gW/uhhxoD1f41pFE2k=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://thehomelab.lol/%3Clink%20/%20url%20to%20icon%3E">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thehomelab.lol/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thehomelab.lol/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thehomelab.lol/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thehomelab.lol/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://thehomelab.lol/gear/hardware_2025/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://thehomelab.lol/gear/hardware_2025/">
+  <meta property="og:site_name" content="TheHomeLab">
+  <meta property="og:title" content="The Lab: Hardware & Specs">
+  <meta property="og:description" content="A detailed breakdown of the silicon powering TheHomeLab.lol, from 2.5GbE networking to N5105-powered storage.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="gear">
+    <meta property="article:published_time" content="2023-11-30T10:00:00-05:00">
+    <meta property="article:modified_time" content="2023-11-30T10:00:00-05:00">
+    <meta property="article:tag" content="Homelab">
+    <meta property="article:tag" content="Hardware">
+    <meta property="article:tag" content="Infrastructure">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Lab: Hardware &amp; Specs">
+<meta name="twitter:description" content="A detailed breakdown of the silicon powering TheHomeLab.lol, from 2.5GbE networking to N5105-powered storage.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Gear",
+      "item": "https://thehomelab.lol/gear/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Lab: Hardware \u0026 Specs",
+      "item": "https://thehomelab.lol/gear/hardware_2025/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Lab: Hardware \u0026 Specs",
+  "name": "The Lab: Hardware \u0026 Specs",
+  "description": "A detailed breakdown of the silicon powering TheHomeLab.lol, from 2.5GbE networking to N5105-powered storage.",
+  "keywords": [
+    "homelab", "hardware", "infrastructure"
+  ],
+  "articleBody": "Every homelab is a work in progress. Here is the current state of the infrastructure powering my self-hosted services, containers, and development workflows.\nStorage \u0026 Virtualization (The Core) My “Always On” infrastructure relies on QNAP hardware modified for Docker performance. The N5105 CPU is critical here because it supports Intel QuickSync for hardware transcoding (Plex/Jellyfin).\nQNAP TS-464 This is the primary workhorse. It handles mass storage, backups, and runs the bulk of my Docker containers via Portainer.\nComponent Specification Role CPU Intel Celeron N5105 (4c/4t @ 2.9GHz) Transcoding \u0026 Container Orchestration RAM 16 GB (15 GB Usable) Memory for Docker Stacks Network 2.5 GbE High-speed link to Switch Storage (Capacity) 4x 8TB SATA HDDs (3.5\") Media Library \u0026 Archives Storage (Speed) 1x 1TB NVMe SSD (PCIe Gen3) AppData, Databases, \u0026 Container Volumes Config Note: The HDDs are strictly for “Cold Storage” (Capacity Tier). All Docker containers and databases live on the NVMe SSD to ensure the UI remains snappy.\n⚡ Compute (The Drivers) While the NAS runs the background tasks, these machines handle the heavy lifting, compilation, and administration.\nMac Mini (M2) Spec: Apple M2 Chip / 16 GB RAM Role: The daily driver. This machine manages the SSH sessions into the lab and handles video editing for the channel. Connectivity: Hardwired via 2.5GbE. MacBook Air (M1, 2020) Spec: Apple M1 Chip / 8 GB RAM Role: The “Mobile Command Center.” Used for writing code and monitoring Grafana dashboards while away from the desk. 🌐 Networking (The Backbone) You cannot have a high-performance lab with a 1Gbps bottleneck. The network backbone has been upgraded to 2.5Gbps to match the QNAP’s throughput.\nUnmanaged 2.5GbE Switch (5-Port) Throughput: 2.5 Gbps per port (Full Duplex) Uplinks: Port 1: QNAP TS-464 Port 2: Mac Mini M2 Port 5: Uplink to Router/WAN This page is updated as hardware is rotated or upgraded.\n",
+  "wordCount" : "307",
+  "inLanguage": "en",
+  "datePublished": "2023-11-30T10:00:00-05:00",
+  "dateModified": "2023-11-30T10:00:00-05:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thehomelab.lol/gear/hardware_2025/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TheHomeLab",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thehomelab.lol/%3Clink%20/%20url%20to%20icon%3E"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thehomelab.lol/" accesskey="h" title="TheHomeLab (Alt + H)">TheHomeLab</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thehomelab.lol/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thehomelab.lol/guides/" title="Guides">
+                    <span>Guides</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thehomelab.lol/gear/" title="Gear">
+                    <span>Gear</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thehomelab.lol/stack/" title="Stack">
+                    <span>Stack</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thehomelab.lol/">Home</a>&nbsp;»&nbsp;<a href="https://thehomelab.lol/gear/">Gear</a></div>
+    <h1 class="post-title entry-hint-parent">
+      The Lab: Hardware &amp; Specs
+    </h1>
+    <div class="post-meta"><span title='2023-11-30 10:00:00 -0500 -0500'>November 30, 2023</span>&nbsp;|&nbsp;<span>
+    <a href="https://github.com/drusho/thehomelab-web/edit/main/content/gear/hardware_2025.md" rel="noopener noreferrer edit" target="_blank">Edit this page on GitHub</a>
+</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Every homelab is a work in progress. Here is the current state of the infrastructure powering my self-hosted services, containers, and development workflows.</p>
+<h2 id="storage--virtualization-the-core">Storage &amp; Virtualization (The Core)<a hidden class="anchor" aria-hidden="true" href="#storage--virtualization-the-core">#</a></h2>
+<p>My &ldquo;Always On&rdquo; infrastructure relies on QNAP hardware modified for Docker performance. The N5105 CPU is critical here because it supports Intel QuickSync for hardware transcoding (Plex/Jellyfin).</p>
+<h3 id="qnap-ts-464">QNAP TS-464<a hidden class="anchor" aria-hidden="true" href="#qnap-ts-464">#</a></h3>
+<p>This is the primary workhorse. It handles mass storage, backups, and runs the bulk of my Docker containers via Portainer.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Component</th>
+          <th style="text-align: left">Specification</th>
+          <th style="text-align: left">Role</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>CPU</strong></td>
+          <td style="text-align: left">Intel Celeron N5105 (4c/4t @ 2.9GHz)</td>
+          <td style="text-align: left">Transcoding &amp; Container Orchestration</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>RAM</strong></td>
+          <td style="text-align: left">16 GB (15 GB Usable)</td>
+          <td style="text-align: left">Memory for Docker Stacks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Network</strong></td>
+          <td style="text-align: left">2.5 GbE</td>
+          <td style="text-align: left">High-speed link to Switch</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Storage (Capacity)</strong></td>
+          <td style="text-align: left">4x 8TB SATA HDDs (3.5&quot;)</td>
+          <td style="text-align: left">Media Library &amp; Archives</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Storage (Speed)</strong></td>
+          <td style="text-align: left">1x 1TB NVMe SSD (PCIe Gen3)</td>
+          <td style="text-align: left">AppData, Databases, &amp; Container Volumes</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Config Note:</strong> The HDDs are strictly for &ldquo;Cold Storage&rdquo; (Capacity Tier). All Docker containers and databases live on the NVMe SSD to ensure the UI remains snappy.</p>
+</blockquote>
+<hr>
+<h2 id="-compute-the-drivers">⚡ Compute (The Drivers)<a hidden class="anchor" aria-hidden="true" href="#-compute-the-drivers">#</a></h2>
+<p>While the NAS runs the background tasks, these machines handle the heavy lifting, compilation, and administration.</p>
+<h3 id="mac-mini-m2">Mac Mini (M2)<a hidden class="anchor" aria-hidden="true" href="#mac-mini-m2">#</a></h3>
+<ul>
+<li><strong>Spec:</strong> Apple M2 Chip / 16 GB RAM</li>
+<li><strong>Role:</strong> The daily driver. This machine manages the SSH sessions into the lab and handles video editing for the channel.</li>
+<li><strong>Connectivity:</strong> Hardwired via 2.5GbE.</li>
+</ul>
+<h3 id="macbook-air-m1-2020">MacBook Air (M1, 2020)<a hidden class="anchor" aria-hidden="true" href="#macbook-air-m1-2020">#</a></h3>
+<ul>
+<li><strong>Spec:</strong> Apple M1 Chip / 8 GB RAM</li>
+<li><strong>Role:</strong> The &ldquo;Mobile Command Center.&rdquo; Used for writing code and monitoring Grafana dashboards while away from the desk.</li>
+</ul>
+<hr>
+<h2 id="-networking-the-backbone">🌐 Networking (The Backbone)<a hidden class="anchor" aria-hidden="true" href="#-networking-the-backbone">#</a></h2>
+<p>You cannot have a high-performance lab with a 1Gbps bottleneck. The network backbone has been upgraded to 2.5Gbps to match the QNAP&rsquo;s throughput.</p>
+<h3 id="unmanaged-25gbe-switch-5-port">Unmanaged 2.5GbE Switch (5-Port)<a hidden class="anchor" aria-hidden="true" href="#unmanaged-25gbe-switch-5-port">#</a></h3>
+<ul>
+<li><strong>Throughput:</strong> 2.5 Gbps per port (Full Duplex)</li>
+<li><strong>Uplinks:</strong>
+<ul>
+<li>Port 1: QNAP TS-464</li>
+<li>Port 2: Mac Mini M2</li>
+<li>Port 5: Uplink to Router/WAN</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><em>This page is updated as hardware is rotated or upgraded.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://thehomelab.lol/tags/homelab/">Homelab</a></li>
+      <li><a href="https://thehomelab.lol/tags/hardware/">Hardware</a></li>
+      <li><a href="https://thehomelab.lol/tags/infrastructure/">Infrastructure</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://thehomelab.lol/">TheHomeLab</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
