@@ -62,7 +62,7 @@ The Workflow:
 Example `Caddyfile`:
 This simple config eliminates the need to remember port numbers:
 
-```json
+```nginx
 # Global Options
 {
     local_certs
