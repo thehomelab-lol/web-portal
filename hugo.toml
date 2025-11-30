@@ -4,32 +4,40 @@ title = "TheHomeLab"
 theme = "PaperMod"
 
 [params]
-  defaultTheme = "dark"
-  ShowCodeCopyButtons = true
-  mainSections = ["blog", "guides"]
-  
-  # "Edit on GitHub" configuration
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowShareButtons = false
-  editPost = { URL = "https://github.com/drusho/thehomelab-web/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
+defaultTheme = "dark"
+ShowCodeCopyButtons = true
+mainSections = ["blog", "guides"]
 
-  [params.assets]
-    favicon = "<link / url to icon>"
+# "Edit on GitHub" configuration
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowShareButtons = false
+editPost = {
+URL = "https://github.com/drusho/thehomelab-web/edit/main/content",
+Text = "Edit this page on GitHub", appendFilePath = true
+}
+
+[params.assets]
+favicon = "<link / url to icon>"
 
 [menu]
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 10
-  [[menu.main]]
-    identifier = "guides"
-    name = "Guides"
-    url = "/guides/"
-    weight = 20
-  [[menu.main]]
-    identifier = "gear"
-    name = "Gear"
-    url = "/gear/"
-    weight = 30
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/blog/"
+weight = 10
+[[menu.main]]
+identifier = "guides"
+name = "Guides"
+url = "/guides/"
+weight = 20
+[[menu.main]]
+identifier = "gear"
+name = "Hardware"
+url = "/gear/"
+weight = 30
+[[menu.main]]
+identifier = "stack"
+name = "Software"
+url = "/stack/"
+weight = 40
