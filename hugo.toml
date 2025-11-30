@@ -4,7 +4,7 @@ title = "TheHomeLab"
 theme = "PaperMod"
 
 [params]
-  defaultTheme = "dark" # Force dark mode
+  defaultTheme = "dark"
   ShowCodeCopyButtons = true
   mainSections = ["blog", "docs"]
   
@@ -16,15 +16,6 @@ theme = "PaperMod"
 
   [params.assets]
     favicon = "<link / url to icon>"
-
-[markup]
-  [markup.highlight]
-    noClasses = false
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = true
-    lineNos = true
-    style = "dracula" # Closest built-in to Cobalt2, will customize via CSS if needed
 
 [menu]
   [[menu.main]]
