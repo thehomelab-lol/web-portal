@@ -6,7 +6,7 @@ theme = "PaperMod"
 [params]
   defaultTheme = "dark"
   ShowCodeCopyButtons = true
-  mainSections = ["blog", "docs"]
+  mainSections = ["blog", "guides"]
   
   # "Edit on GitHub" configuration
   ShowPostNavLinks = true
@@ -24,12 +24,12 @@ theme = "PaperMod"
     url = "/blog/"
     weight = 10
   [[menu.main]]
-    identifier = "docs"
-    name = "Docs"
-    url = "/docs/"
+    identifier = "guides"
+    name = "Guides"
+    url = "/guides/"
     weight = 20
   [[menu.main]]
-    identifier = "uses"
-    name = "Uses"
-    url = "/uses/"
+    identifier = "gear"
+    name = "Gear"
+    url = "/gear/"
     weight = 30
