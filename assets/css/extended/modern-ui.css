@@ -21,6 +21,15 @@
     border-color: var(--primary);
 }
 
+/* Cover Image Resizing */
+.entry-cover img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    /* Optional: slight rounding to match card inner style */
+}
+
 /* Button Modernization */
 .button {
     border-radius: 6px;
