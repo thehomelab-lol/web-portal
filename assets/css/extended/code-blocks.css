@@ -1,8 +1,8 @@
 /* Enforce Dark Mode Code Blocks */
 :root {
-    /* Force dark mode code block colors globally */
-    --code-block-bg: rgb(46, 46, 51) !important;
-    --code-bg: rgb(55, 56, 62) !important;
+    /* Force dark mode code block colors globally (Cobalt2 Theme) */
+    --code-block-bg: #193549 !important;
+    --code-bg: #193549 !important;
 }
 
 /* Ensure code blocks use these variables and light text */

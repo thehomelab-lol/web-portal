@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "TheHomeLab"
 theme = "PaperMod"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "cobalt"
+
 [params]
   defaultTheme = "dark"
   ShowCodeCopyButtons = true
