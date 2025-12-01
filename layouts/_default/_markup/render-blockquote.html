@@ -6,8 +6,7 @@
 {{- /* Enforce a minimum required Hugo version. */}}
 {{- $minHugoVersion := "0.140.0" }}
 {{- if lt hugo.Version $minHugoVersion }}
-{{- errorf "Hugo-admonitions requires Hugo v%s or later. Please upgrade Hugo to v%s or higher." $minHugoVersion
-$minHugoVersion }}
+{{- errorf "Hugo-admonitions requires Hugo v%s or later. Please upgrade Hugo to v%s or higher." $minHugoVersion }}
 {{- end -}}
 
 {{- /* Transpile Sass to CSS and render the link element once per page. */}}
