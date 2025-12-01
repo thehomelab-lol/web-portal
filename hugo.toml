@@ -1,7 +1,13 @@
 baseURL = "https://thehomelab.lol/"
 languageCode = "en-us"
 title = "TheHomeLab"
-theme = ["PaperMod", "hugo-admonitions"]
+
+
+[module]
+  [[module.imports]]
+    path = "github.com/KKKZOZ/hugo-admonitions"
+  [[module.imports]]
+    path = "PaperMod"
 
 [markup]
   [markup.highlight]
