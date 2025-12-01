@@ -69,8 +69,8 @@
 {{- /* Check if .AlertSign exists to determine if it's foldable */}}
 {{- if .AlertSign }}
 {{- /* --- START Foldable Admonition HTML (using <details>) --- */}}
-    {{- /* The 'open' attribute could be conditionally added based on .AlertSign, e.g., if eq .AlertSign "-" */}}
-    <details class="admonition {{ $type }}">
+    {{- /* If the sign is "+", default to open. If "-", default to closed. */}}
+    <details class="admonition {{ $type }}" {{- if eq .AlertSign "+" }} open {{- end }}>
         <summary class="admonition-header">
             {{- partialCached $partial . }}
             <span>{{ $title }}</span>
