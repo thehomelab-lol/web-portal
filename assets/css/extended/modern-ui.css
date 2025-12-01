@@ -46,3 +46,31 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Post Grid Layout */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+.post-entry {
+    height: 100%;
+    /* Ensure cards stretch to fill grid cell */
+    margin-bottom: 0;
+    /* Let grid gap handle spacing */
+    display: flex;
+    flex-direction: column;
+}
+
+.entry-content {
+    flex-grow: 1;
+    /* Push footer to bottom */
+}
+
+/* Ensure first entry doesn't break grid if it was styled differently */
+.first-entry {
+    min-height: auto;
+    margin: 0;
+}
