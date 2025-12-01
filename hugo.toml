@@ -4,46 +4,50 @@ title = "TheHomeLab"
 theme = "PaperMod"
 
 [params]
-defaultTheme = "dark"
-ShowCodeCopyButtons = true
-mainSections = ["blog", "guides", "stack"]
+  defaultTheme = "dark"
+  ShowCodeCopyButtons = true
+  # Only show "News" and "Tutorials" in the homepage feed.
+  # We exclude "stack" and "gear" because those are static reference pages.
+  mainSections = ["blog", "guides"]
 
-# "Edit on GitHub" configuration
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
-ShowShareButtons = false
-editPost = { URL = "https://github.com/drusho/thehomelab-web/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
+  # "Edit on GitHub" configuration
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowShareButtons = false
+  # CHECK THIS URL: Ensure 'web-portal' is the actual name of your repo
+  editPost = { URL = "https://github.com/TheHomelabLOL/web-portal/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
 
 [params.assets]
-favicon = "<link / url to icon>"
+  # ensure you have a logo.png in your 'static' folder, or comment this out
+  favicon = "/logo.png"
 
 [menu]
-[[menu.main]]
-identifier = "blog"
-name = "Blog"
-url = "/blog/"
-weight = 10
-[[menu.main]]
-identifier = "guides"
-name = "Guides"
-url = "/guides/"
-weight = 20
-[[menu.main]]
-identifier = "gear"
-name = "Gear"
-url = "/gear/"
-weight = 30
-[[menu.main]]
-identifier = "stack"
-name = "Stack"
-url = "/stack/"
-weight = 40
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 10
+  [[menu.main]]
+    identifier = "guides"
+    name = "Guides"
+    url = "/guides/"
+    weight = 20
+  [[menu.main]]
+    identifier = "gear"
+    name = "Gear"
+    url = "/gear/"
+    weight = 30
+  [[menu.main]]
+    identifier = "stack"
+    name = "Stack"
+    url = "/stack/"
+    weight = 40
 
 [params.profileMode]
   enabled = true
   title = "TheHomeLab.lol"
   subtitle = "Everything as Code. Documenting the journey of self-hosting, Docker, and enterprise gear at home."
-  imageUrl = "logo.png" # We will add this image in Part 2
+  imageUrl = "logo.png" # Requires 'static/logo.png'
   imageTitle = "The Lab"
   imageWidth = 150
   imageHeight = 150
