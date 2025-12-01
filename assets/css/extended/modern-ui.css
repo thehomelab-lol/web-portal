@@ -23,8 +23,9 @@
 
 /* Cover Image Resizing */
 .entry-cover img {
-    height: 250px;
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 4px;
     /* Optional: slight rounding to match card inner style */
