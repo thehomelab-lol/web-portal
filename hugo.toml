@@ -70,7 +70,7 @@ theme = "PaperMod"
 # Social Icons (appear at the bottom of the card)
 [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/TheHomelabLOL"
+  url = "https://github.com/TheHomelab-LOL"
 [[params.socialIcons]]
   name = "youtube"
   url = "https://youtube.com/@YourChannel"
