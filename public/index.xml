@@ -10,10 +10,31 @@
     <atom:link href="https://thehomelab.lol/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Lab: Hardware &amp; Specs</title>
-      <link>https://thehomelab.lol/gear/hardware_2025/</link>
+      <link>https://thehomelab.lol/gear/20251130_hardware/</link>
       <pubDate>Thu, 30 Nov 2023 10:00:00 -0500</pubDate>
-      <guid>https://thehomelab.lol/gear/hardware_2025/</guid>
+      <guid>https://thehomelab.lol/gear/20251130_hardware/</guid>
       <description>A detailed breakdown of the silicon powering TheHomeLab.lol, from 2.5GbE networking to N5105-powered storage.</description>
+    </item>
+    <item>
+      <title>Setting up Pi-hole</title>
+      <link>https://thehomelab.lol/guides/202510330_pihole/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/guides/202510330_pihole/</guid>
+      <description>A guide on setting up Pi-hole for network-wide ad blocking.</description>
+    </item>
+    <item>
+      <title>The Stack: Software &amp; Services</title>
+      <link>https://thehomelab.lol/stack/stack_2025/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/stack/stack_2025/</guid>
+      <description>A breakdown of the 25+ Docker services running on the QNAP NAS, managed via Dockflare and Gluetun.</description>
+    </item>
+    <item>
+      <title>AI Editor</title>
+      <link>https://thehomelab.lol/blog/ai_editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/blog/ai_editor/</guid>
+      <description>AI Editor</description>
     </item>
   </channel>
 </rss>

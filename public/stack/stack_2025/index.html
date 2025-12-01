@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="dark">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>The Stack: Software &amp; Services | TheHomeLab</title>
+<meta name="keywords" content="">
+<meta name="description" content="A breakdown of the 25&#43; Docker services running on the QNAP NAS, managed via Dockflare and Gluetun.">
+<meta name="author" content="">
+<link rel="canonical" href="https://thehomelab.lol/stack/stack_2025/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1a21005e5b2e95528b01b368d5bdad9a0b490b6b1cc7f8a78e9ff6adff1b3612.css" integrity="sha256-GiEAXlsulVKLAbNo1b2tmgtJC2scx/injp/2rf8bNhI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://thehomelab.lol/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://thehomelab.lol/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://thehomelab.lol/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://thehomelab.lol/apple-touch-icon.png">
+<link rel="mask-icon" href="https://thehomelab.lol/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://thehomelab.lol/stack/stack_2025/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://thehomelab.lol/stack/stack_2025/">
+  <meta property="og:site_name" content="TheHomeLab">
+  <meta property="og:title" content="The Stack: Software & Services">
+  <meta property="og:description" content="A breakdown of the 25&#43; Docker services running on the QNAP NAS, managed via Dockflare and Gluetun.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="stack">
+    <meta property="article:published_time" content="2023-11-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-11-30T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Stack: Software &amp; Services">
+<meta name="twitter:description" content="A breakdown of the 25&#43; Docker services running on the QNAP NAS, managed via Dockflare and Gluetun.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Stack",
+      "item": "https://thehomelab.lol/stack/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Stack: Software \u0026 Services",
+      "item": "https://thehomelab.lol/stack/stack_2025/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Stack: Software \u0026 Services",
+  "name": "The Stack: Software \u0026 Services",
+  "description": "A breakdown of the 25+ Docker services running on the QNAP NAS, managed via Dockflare and Gluetun.",
+  "keywords": [
+    
+  ],
+  "articleBody": "The core philosophy of the lab is “Everything as Code.”\nEvery service listed below is defined in a docker-compose.yml file, version-controlled, and backed up. The lab runs on a QNAP NAS acting as the Docker Host, but the architecture is platform-agnostic.\nGitHub Repository: You can find the exact configuration files, folder structures, and .env templates for this entire stack in my Private HomeLab Docker Projects repo.\nArchitecture \u0026 Standards To maintain sanity with over 25 containers, I follow strict deployment standards.\n1. File Structure Every application gets its own directory containing the compose file and environment variables.\n/homeLab ├── /karakeep │ ├── docker-compose.yml │ └── .env.example ├── /homepage │ ├── docker-compose.yml │ └── .env.example ├── .gitignore └── README.md 2. Data Persistence I do not use Docker Volumes. I use Bind Mounts. This makes backing up data as simple as copying a folder.\nConfig Path: /share/Public/Container_Settings//data Secret Management: API keys are stored in .env files (which are git-ignored) and referenced in the compose files. 3. Networking Strategy Internal: Services are isolated. VPN Routing: Apps like qBittorrent and SearXNG route all traffic through a Gluetun container to ensure privacy. External Access: I use Dockflare. It manages Cloudflare Tunnels automatically via Docker Labels, meaning I expose services to https://service.thehomelab.lol without ever opening a firewall port. Local Access (Caddy) While Dockflare handles external access (outside the house), I use Caddy to manage internal access.\nInstead of typing IPs and ports (e.g., 192.168.1.249:8989), I access every service via a “Pretty URL” ending in .local. Caddy runs as a container and handles the local DNS resolution and automatic internal SSL certificates.\nThe Workflow:\nDevice: Laptop/Phone connects to Wi-Fi. Browser: I type https://sonarr.local. Caddy: Intercepts the request and routes it to the correct Docker container port. Example Caddyfile: This simple config eliminates the need to remember port numbers:\n# Global Options { local_certs } # Service Definitions sonarr.local { reverse_proxy 192.168.1.249:8989 } radarr.local { reverse_proxy 192.168.1.249:7878 } home.local { reverse_proxy 192.168.1.249:80 } The Project Catalog Management \u0026 Infrastructure Dockflare: An automated Cloudflare tunnel manager. It reads Docker labels to auto-create DNS records for my containers. **Dozzle:****Real-time log viewer. Essential for debugging crashed containers. Komodo: A modern, agent-based Docker Management UI (my replacement for Portainer). Semaphore UI: A web interface for running Ansible playbooks to automate server maintenance. Uptime Kuma: Monitors services and sends alerts to Discord if something goes down. Media \u0026 Automation (The *Arr Stack) Bazarr: Automatically finds and downloads subtitles for Sonarr/Radarr content. Discoflix: A Discord bot allowing users to “Request” movies/shows, which automatically adds them to Sonarr/Radarr. FlareSolverr: A proxy server designed to bypass Cloudflare anti-bot checks, used by Prowlarr to access trackers. Jellyfin: The open-source backup media server. Plex: The primary media server (Hardware Transcoding enabled via Intel QuickSync). Sonarr (1080p \u0026 Anime): I run two separate instances. One for standard TV, one specifically tuned for Anime release groups. Prowlarr: The indexer manager. Syncs torrent trackers to all *Arr apps. Radarr: Automated movie collection manager. Downloads \u0026 Archival Gluetun Stack: The privacy core. qBittorrent, SearXNG, and Firefox run through this container to ensure all traffic is encrypted via VPN. jDownloader2: For direct downloads (DDL) and file hosters. KaraKeep: A web archiver. It snapshots webpages for offline viewing (like a personal Wayback Machine). pyLoad-ng: A lightweight download manager with captcha solving and premium account support. YTPTube: A self-hosted YouTube downloader to archive channels in 4K. Productivity \u0026 Knowledge Kavita: A dedicated reading server for Comics, Manga, and eBooks. Mealie: Recipe manager and meal planner. Scrapes recipes from websites automatically. Paperless-ngx: The digital filing cabinet. OCRs physical documents and makes them searchable. ",
+  "wordCount" : "597",
+  "inLanguage": "en",
+  "datePublished": "2023-11-30T00:00:00Z",
+  "dateModified": "2023-11-30T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thehomelab.lol/stack/stack_2025/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TheHomeLab",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thehomelab.lol/logo.png"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://thehomelab.lol/" accesskey="h" title="TheHomeLab (Alt + H)">TheHomeLab</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://thehomelab.lol/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thehomelab.lol/guides/" title="Guides">
+                    <span>Guides</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thehomelab.lol/gear/" title="Gear">
+                    <span>Gear</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://thehomelab.lol/stack/" title="Stack">
+                    <span>Stack</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://thehomelab.lol/">Home</a>&nbsp;»&nbsp;<a href="https://thehomelab.lol/stack/">Stack</a></div>
+    <h1 class="post-title entry-hint-parent">
+      The Stack: Software &amp; Services
+    </h1>
+    <div class="post-meta"><span title='2023-11-30 00:00:00 +0000 UTC'>November 30, 2023</span>&nbsp;|&nbsp;<span>
+    <a href="https://github.com/TheHomelabLOL/web-portal/edit/main/content/stack/stack_2025.md" rel="noopener noreferrer edit" target="_blank">Edit this page on GitHub</a>
+</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#architecture--standards" aria-label="Architecture &amp; Standards">Architecture &amp; Standards</a><ul>
+                        
+                <li>
+                    <a href="#1-file-structure" aria-label="1. File Structure">1. File Structure</a></li>
+                <li>
+                    <a href="#2-data-persistence" aria-label="2. Data Persistence">2. Data Persistence</a></li>
+                <li>
+                    <a href="#3-networking-strategy" aria-label="3. Networking Strategy">3. Networking Strategy</a></li></ul>
+                </li>
+                <li>
+                    <a href="#local-access-caddy" aria-label="Local Access (Caddy)">Local Access (Caddy)</a></li>
+                <li>
+                    <a href="#the-project-catalog" aria-label="The Project Catalog">The Project Catalog</a><ul>
+                        
+                <li>
+                    <a href="#management--infrastructure" aria-label="Management &amp; Infrastructure">Management &amp; Infrastructure</a></li>
+                <li>
+                    <a href="#media--automation-the-arr-stack" aria-label="Media &amp; Automation (The *Arr Stack)">Media &amp; Automation (The *Arr Stack)</a></li>
+                <li>
+                    <a href="#downloads--archival" aria-label="Downloads &amp; Archival">Downloads &amp; Archival</a></li>
+                <li>
+                    <a href="#productivity--knowledge" aria-label="Productivity &amp; Knowledge">Productivity &amp; Knowledge</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>The core philosophy of the lab is <strong>&ldquo;Everything as Code.&rdquo;</strong></p>
+<p>Every service listed below is defined in a <code>docker-compose.yml</code> file, version-controlled, and backed up. The lab runs on a <strong>QNAP NAS</strong> acting as the Docker Host, but the architecture is platform-agnostic.</p>
+
+        <blockquote>
+            <p><strong>GitHub Repository:</strong> You can find the exact configuration files, folder structures, and <code>.env</code> templates for this entire stack in my <a href="https://github.com/TheHomelabLOL/lab-stacks">Private HomeLab Docker Projects</a> repo.</p>
+
+        </blockquote><hr>
+<h2 id="architecture--standards">Architecture &amp; Standards<a hidden class="anchor" aria-hidden="true" href="#architecture--standards">#</a></h2>
+<p>To maintain sanity with over 25 containers, I follow strict deployment standards.</p>
+<h3 id="1-file-structure">1. File Structure<a hidden class="anchor" aria-hidden="true" href="#1-file-structure">#</a></h3>
+<p>Every application gets its own directory containing the compose file and environment variables.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/homeLab
+</span></span><span class="line"><span class="cl">├── /karakeep
+</span></span><span class="line"><span class="cl">│   ├── docker-compose.yml
+</span></span><span class="line"><span class="cl">│   └── .env.example
+</span></span><span class="line"><span class="cl">├── /homepage
+</span></span><span class="line"><span class="cl">│   ├── docker-compose.yml
+</span></span><span class="line"><span class="cl">│   └── .env.example
+</span></span><span class="line"><span class="cl">├── .gitignore
+</span></span><span class="line"><span class="cl">└── README.md
+</span></span></code></pre></div><h3 id="2-data-persistence">2. Data Persistence<a hidden class="anchor" aria-hidden="true" href="#2-data-persistence">#</a></h3>
+<p>I do not use Docker Volumes. I use Bind Mounts. This makes backing up data as simple as copying a folder.</p>
+<ul>
+<li>Config Path: <code>/share/Public/Container_Settings/&lt;app_name&gt;/data</code></li>
+<li>Secret Management: API keys are stored in .env files (which are git-ignored) and referenced in the compose files.</li>
+</ul>
+<h3 id="3-networking-strategy">3. Networking Strategy<a hidden class="anchor" aria-hidden="true" href="#3-networking-strategy">#</a></h3>
+<ul>
+<li>Internal: Services are isolated.</li>
+<li>VPN Routing: Apps like qBittorrent and SearXNG route all traffic through a Gluetun container to ensure privacy.</li>
+<li>External Access: I use Dockflare. It manages Cloudflare Tunnels automatically via Docker Labels, meaning I expose services to <a href="https://service.thehomelab.lol">https://service.thehomelab.lol</a> without ever opening a firewall port.</li>
+</ul>
+<h2 id="local-access-caddy">Local Access (Caddy)<a hidden class="anchor" aria-hidden="true" href="#local-access-caddy">#</a></h2>
+<p>While Dockflare handles external access (outside the house), I use Caddy to manage internal access.</p>
+<p>Instead of typing IPs and ports (e.g., 192.168.1.249:8989), I access every service via a &ldquo;Pretty URL&rdquo; ending in .local. Caddy runs as a container and handles the local DNS resolution and automatic internal SSL certificates.</p>
+<p>The Workflow:</p>
+<ol>
+<li>Device: Laptop/Phone connects to Wi-Fi.</li>
+<li>Browser: I type <a href="https://sonarr.local">https://sonarr.local</a>.</li>
+<li>Caddy: Intercepts the request and routes it to the correct Docker container port.</li>
+</ol>
+<p>Example <code>Caddyfile</code>:
+This simple config eliminates the need to remember port numbers:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-caddy" data-lang="caddy"><span class="line"><span class="cl"><span class="c1"># Global Options
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">local_certs</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="c1">
+</span></span></span><span class="line"><span class="cl"><span class="c1">
+</span></span></span><span class="line"><span class="cl"><span class="c1"># Service Definitions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="gh">sonarr.local</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">reverse_proxy</span> <span class="n">192.168.1.249</span><span class="p">:</span><span class="mi">8989</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh">radarr.local</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">reverse_proxy</span> <span class="n">192.168.1.249</span><span class="p">:</span><span class="mi">7878</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh">home.local</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">reverse_proxy</span> <span class="n">192.168.1.249</span><span class="p">:</span><span class="mi">80</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="the-project-catalog">The Project Catalog<a hidden class="anchor" aria-hidden="true" href="#the-project-catalog">#</a></h2>
+<h3 id="management--infrastructure">Management &amp; Infrastructure<a hidden class="anchor" aria-hidden="true" href="#management--infrastructure">#</a></h3>
+<ul>
+<li><strong>Dockflare:</strong> An automated Cloudflare tunnel manager. It reads Docker labels to auto-create DNS records for my containers.</li>
+<li>**Dozzle:****Real-time log viewer. Essential for debugging crashed containers.</li>
+<li><strong>Komodo:</strong> A modern, agent-based Docker Management UI (my replacement for Portainer).</li>
+<li><strong>Semaphore UI:</strong> A web interface for running Ansible playbooks to automate server maintenance.</li>
+<li><strong>Uptime Kuma:</strong> Monitors services and sends alerts to Discord if something goes down.</li>
+</ul>
+<h3 id="media--automation-the-arr-stack">Media &amp; Automation (The *Arr Stack)<a hidden class="anchor" aria-hidden="true" href="#media--automation-the-arr-stack">#</a></h3>
+<ul>
+<li><strong>Bazarr:</strong> Automatically finds and downloads subtitles for Sonarr/Radarr content.</li>
+<li><strong>Discoflix:</strong> A Discord bot allowing users to &ldquo;Request&rdquo; movies/shows, which automatically adds them to Sonarr/Radarr.</li>
+<li><strong>FlareSolverr:</strong> A proxy server designed to bypass Cloudflare anti-bot checks, used by Prowlarr to access trackers.</li>
+<li><strong>Jellyfin:</strong> The open-source backup media server.</li>
+<li><strong>Plex:</strong> The primary media server (Hardware Transcoding enabled via Intel QuickSync).</li>
+<li><strong>Sonarr (1080p &amp; Anime):</strong> I run two separate instances. One for standard TV, one specifically tuned for Anime release groups.</li>
+<li><strong>Prowlarr:</strong> The indexer manager. Syncs torrent trackers to all *Arr apps.</li>
+<li><strong>Radarr:</strong> Automated movie collection manager.</li>
+</ul>
+<h3 id="downloads--archival">Downloads &amp; Archival<a hidden class="anchor" aria-hidden="true" href="#downloads--archival">#</a></h3>
+<ul>
+<li><strong>Gluetun Stack:</strong> The privacy core. qBittorrent, SearXNG, and Firefox run through this container to ensure all traffic is encrypted via VPN.</li>
+<li><strong>jDownloader2:</strong> For direct downloads (DDL) and file hosters.</li>
+<li><strong>KaraKeep:</strong> A web archiver. It snapshots webpages for offline viewing (like a personal Wayback Machine).</li>
+<li><strong>pyLoad-ng:</strong> A lightweight download manager with captcha solving and premium account support.</li>
+<li><strong>YTPTube:</strong> A self-hosted YouTube downloader to archive channels in 4K.</li>
+</ul>
+<h3 id="productivity--knowledge">Productivity &amp; Knowledge<a hidden class="anchor" aria-hidden="true" href="#productivity--knowledge">#</a></h3>
+<ul>
+<li><strong>Kavita:</strong> A dedicated reading server for Comics, Manga, and eBooks.</li>
+<li><strong>Mealie:</strong> Recipe manager and meal planner. Scrapes recipes from websites automatically.</li>
+<li><strong>Paperless-ngx:</strong> The digital filing cabinet. OCRs physical documents and makes them searchable.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://thehomelab.lol/">TheHomeLab</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

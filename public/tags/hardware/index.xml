@@ -10,9 +10,9 @@
     <atom:link href="https://thehomelab.lol/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Lab: Hardware &amp; Specs</title>
-      <link>https://thehomelab.lol/gear/hardware_2025/</link>
+      <link>https://thehomelab.lol/gear/20251130_hardware/</link>
       <pubDate>Thu, 30 Nov 2023 10:00:00 -0500</pubDate>
-      <guid>https://thehomelab.lol/gear/hardware_2025/</guid>
+      <guid>https://thehomelab.lol/gear/20251130_hardware/</guid>
       <description>A detailed breakdown of the silicon powering TheHomeLab.lol, from 2.5GbE networking to N5105-powered storage.</description>
     </item>
   </channel>

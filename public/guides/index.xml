@@ -6,6 +6,14 @@
     <description>Recent content in Guides on TheHomeLab</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 30 Nov 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://thehomelab.lol/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up Pi-hole</title>
+      <link>https://thehomelab.lol/guides/202510330_pihole/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/guides/202510330_pihole/</guid>
+      <description>A guide on setting up Pi-hole for network-wide ad blocking.</description>
+    </item>
   </channel>
 </rss>

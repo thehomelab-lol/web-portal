@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thehomelab.lol/guides/getting-started/</loc>
-  </url><url>
-    <loc>https://thehomelab.lol/guides/docker-containers/</loc>
-  </url><url>
-    <loc>https://thehomelab.lol/guides/networking/</loc>
-  </url><url>
-    <loc>https://thehomelab.lol/</loc>
-    <lastmod>2023-11-30T10:00:00-05:00</lastmod>
-  </url><url>
     <loc>https://thehomelab.lol/gear/</loc>
     <lastmod>2023-11-30T10:00:00-05:00</lastmod>
   </url><url>
@@ -26,16 +17,28 @@
     <loc>https://thehomelab.lol/tags/</loc>
     <lastmod>2023-11-30T10:00:00-05:00</lastmod>
   </url><url>
-    <loc>https://thehomelab.lol/gear/hardware_2025/</loc>
+    <loc>https://thehomelab.lol/gear/20251130_hardware/</loc>
     <lastmod>2023-11-30T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/</loc>
+    <lastmod>2023-11-30T10:00:00-05:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/guides/</loc>
+    <lastmod>2023-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/guides/202510330_pihole/</loc>
+    <lastmod>2023-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thehomelab.lol/stack/</loc>
     <lastmod>2023-11-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://thehomelab.lol/stack/stack_2025/</loc>
+    <lastmod>2023-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thehomelab.lol/blog/ai_editor/</loc>
+  </url><url>
     <loc>https://thehomelab.lol/blog/</loc>
   </url><url>
     <loc>https://thehomelab.lol/categories/</loc>
-  </url><url>
-    <loc>https://thehomelab.lol/guides/</loc>
   </url>
 </urlset>
