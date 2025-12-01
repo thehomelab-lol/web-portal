@@ -10,6 +10,9 @@ cover:
     relative: true
 ---
 
+
+## Prerequisites
+
 > [!NOTIFY]
 > System notification: Your password will expire in 30 days.
 
@@ -22,8 +25,6 @@ cover:
 > [!QUESTION] Can admonitions be nested?
 > > [!TODO] Yes!, they can.
 > > > [!EXAMPLE]  You can even use multiple layers of nesting.
-
-## Prerequisites
 
 Before we begin, ensure you have the following:
 
