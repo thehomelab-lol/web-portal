@@ -38,3 +38,34 @@ identifier = "stack"
 name = "Stack"
 url = "/stack/"
 weight = 40
+
+[params.profileMode]
+  enabled = true
+  title = "TheHomeLab.lol"
+  subtitle = "Everything as Code. Documenting the journey of self-hosting, Docker, and enterprise gear at home."
+  imageUrl = "logo.png" # We will add this image in Part 2
+  imageTitle = "The Lab"
+  imageWidth = 150
+  imageHeight = 150
+
+  # These are the big buttons under your bio
+  [[params.profileMode.buttons]]
+    name = "The Stack"
+    url = "/stack"
+  [[params.profileMode.buttons]]
+    name = "Hardware Gear"
+    url = "/gear"
+  [[params.profileMode.buttons]]
+    name = "YouTube Channel"
+    url = "https://youtube.com/@YourChannel"
+
+# Social Icons (appear at the bottom of the card)
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/TheHomelabLOL"
+[[params.socialIcons]]
+  name = "youtube"
+  url = "https://youtube.com/@YourChannel"
+[[params.socialIcons]]
+  name = "twitter" # or "x"
+  url = "https://x.com/YourHandle"

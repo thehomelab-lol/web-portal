@@ -14,6 +14,8 @@ My "Always On" infrastructure relies on QNAP hardware modified for Docker perfor
 
 ### QNAP TS-464
 
+![QNAP TS-464](qnap_ts_464.png)
+
 This is the primary workhorse. It handles mass storage, backups, and runs the bulk of my Docker containers via Portainer.
 
 | Component | Specification | Role |
