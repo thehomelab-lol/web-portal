@@ -1,7 +1,7 @@
 baseURL = "https://thehomelab.lol/"
 languageCode = "en-us"
 title = "TheHomeLab"
-theme = "PaperMod"
+theme = ["PaperMod", "hugo-admonitions"]
 
 [markup]
   [markup.highlight]

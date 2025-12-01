@@ -69,7 +69,7 @@ services:
 ```
 
 > [!NOTE]
-> **QNAP Port Conflicts**: QTS often uses port 80. We mapped the Pi-hole web interface to port **8080** (`8080:80/tcp`). You will access the admin panel at `http://<NAS_IP>:8080/admin`.
+> **QNAP Port Conflicts**: QTS often uses port 80. We mapped the Pi-hole web interface to port **8080** (`8080:80/tcp`). You will access the admin panel at `http://<NAS_IP>:8080/admin`
 
 ### 3. Deploy the Container
 
