@@ -1,3 +1,10 @@
+/* Force Header Reset */
+.nav {
+    position: relative !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
 /* Post Entry Cards */
 .post-entry {
     background: var(--entry);
