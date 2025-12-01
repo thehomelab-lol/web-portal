@@ -2,7 +2,7 @@
 :root {
     /* Force dark mode code block colors globally (Cobalt2 Theme) */
     --code-block-bg: #193549 !important;
-    --code-bg: #193549 !important;
+    /* Do NOT override --code-bg as it affects list backgrounds in light mode */
 }
 
 /* Ensure code blocks use these variables and light text */
