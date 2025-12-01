@@ -10,6 +10,18 @@ cover:
     relative: true
 ---
 
+> [!NOTIFY]
+> System notification: Your password will expire in 30 days.
+
+> [!WARNING]
+> Warning: This operation will delete all data.
+
+> [!IDEA] Summary
+> This is a summary using the `IDEA` callout!
+
+> [!QUESTION] Can admonitions be nested?
+> > [!TODO] Yes!, they can.
+> > > [!EXAMPLE]  You can even use multiple layers of nesting.
 
 ## Prerequisites
 
