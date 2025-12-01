@@ -64,8 +64,7 @@ $minHugoVersion }}
 
 {{- /* Check if icon exists */}}
 {{- if not (templates.Exists (printf "partials/%s" $partial)) }}
-{{- errorf "The blockquote render hook was unable to find the icon partial at layouts/partials/%s for admonition type
-'%s'." $partial $type }}
+{{- errorf "Icon partial not found at layouts/partials/%s for type '%s'." $partial $type }}
 {{- end }}
 
 {{- /* Check if .AlertSign exists to determine if it's foldable */}}
