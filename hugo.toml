@@ -43,8 +43,12 @@ theme = "PaperMod"
     url = "/stack/"
     weight = 40
 
+[params.homeInfoParams]
+  Title = "TheHomeLab.lol"
+  Content = "Everything as Code. Documenting the journey of self-hosting, Docker, and enterprise gear at home."
+
 [params.profileMode]
-  enabled = true
+  enabled = false
   title = "TheHomeLab.lol"
   subtitle = "Everything as Code. Documenting the journey of self-hosting, Docker, and enterprise gear at home."
   imageUrl = "logo.png" # Requires 'static/logo.png'
