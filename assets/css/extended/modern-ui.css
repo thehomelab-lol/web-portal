@@ -1,0 +1,44 @@
+/* Sticky Glassmorphism Header */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(29, 30, 32, 0.8);
+    /* Matches PaperMod dark bg with opacity */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Post Entry Cards */
+.post-entry {
+    background: var(--entry);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: var(--gap);
+    margin-bottom: var(--gap);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.post-entry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary);
+}
+
+/* Button Modernization */
+.button {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
