@@ -25,20 +25,38 @@
         iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
     }
 
+    // Helper to determine the current theme
+    function getGiscusTheme() {
+        const isDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
+        return isDark ? 'catppuccin_frappe' : 'catppuccin_latte';
+    }
+
     // Listen for theme toggle events from PaperMod
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                const isDark = document.body.classList.contains('dark');
-                // Map to Giscus themes.
-                const giscusTheme = isDark ? 'catppuccin_frappe' : 'catppuccin_latte';
-                setGiscusTheme(giscusTheme);
+                setGiscusTheme(getGiscusTheme());
             }
         });
     });
 
     // Start observing
     observer.observe(document.body, { attributes: true });
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Set initial theme
+    // We wait a tick to ensure the DOM is fully settled and Giscus iframe is ready to receive messages
+    // though the iframe onload might be better, this is a reasonable attempt for now.
+    // Actually, we can just call it; if the iframe isn't ready, the function checks for it.
+    // But since the script is async, the iframe might not be there yet. 
+    // The Giscus script loads the iframe.
+    // We can try setting it after a short delay or just rely on the default config for initial load
+    // and only update on changes. 
+    // However, if the user starts in Light mode but config says Dark, we want to fix it.
+    // Let's try to set it once DOM is ready.
+    document.addEventListener('DOMContentLoaded', () => {
+        setGiscusTheme(getGiscusTheme());
+    });
 </script>
 {{- end }}
 {{- /* Comments area end */ -}}
