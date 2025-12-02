@@ -15,7 +15,7 @@ theme = ["hugo-admonitions", "PaperMod"]
   # We exclude "stack" and "gear" because those are static reference pages.
   mainSections = ["blog", "guides"]
 
-  # "Edit on GitHub" configuration
+  # "Suggest edits to this page on GitHub" configuration
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowShareButtons = false
