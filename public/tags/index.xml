@@ -9,6 +9,13 @@
     <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://thehomelab.lol/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Callouts</title>
+      <link>https://thehomelab.lol/tags/callouts/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/tags/callouts/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Comments</title>
       <link>https://thehomelab.lol/tags/comments/</link>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
@@ -34,6 +41,13 @@
       <link>https://thehomelab.lol/tags/hugo/</link>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://thehomelab.lol/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://thehomelab.lol/tags/markdown/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/tags/markdown/</guid>
       <description></description>
     </item>
     <item>

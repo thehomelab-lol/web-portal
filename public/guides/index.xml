@@ -16,6 +16,13 @@
       <description>A step-by-step guide to integrating GitHub Discussions-based comments into your Hugo site using Giscus.</description>
     </item>
     <item>
+      <title>Using Callouts in Hugo</title>
+      <link>https://thehomelab.lol/guides/20251201_hugo_callouts/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://thehomelab.lol/guides/20251201_hugo_callouts/</guid>
+      <description>A comprehensive guide to using GitHub-style alerts and callouts in your markdown content.</description>
+    </item>
+    <item>
       <title>Setting up Pi-hole</title>
       <link>https://thehomelab.lol/guides/202510330_pihole/</link>
       <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>

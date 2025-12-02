@@ -84,7 +84,7 @@
     "hugo", "giscus", "comments", "guide"
   ],
   "articleBody": "Adding a comment section to a static site can be tricky. You want something that is low maintenance, spam-free, and doesn’t track your users. Giscus checks all these boxes by leveraging GitHub Discussions to store comments.\nIn this guide, we’ll walk through how to integrate Giscus into a Hugo site (specifically using the PaperMod theme, but the concepts apply generally).\nWhy Giscus? Open Source: No proprietary lock-in. No Ads / No Tracking: Respects user privacy. GitHub Integration: Comments are just GitHub Discussions. Free: Hosted on GitHub. Prerequisites A public GitHub repository for your site (or a separate repo just for comments). GitHub Discussions enabled on that repository. The Giscus App installed on that repository. Step 1: Configure Giscus Head over to giscus.app and fill out the configuration form:\nEnter your Repository (e.g., username/repo). Select the Category where new discussions will be created (e.g., “Announcements” or “General”). Choose your features (reactions, lazy loading, etc.). The app will generate a ",
-  "wordCount" : "564",
+  "wordCount" : "582",
   "inLanguage": "en",
   "image":"https://thehomelab.lol/guides/20251201_hugo_giscus_comments/giscus_cover.png","datePublished": "2025-12-01T00:00:00Z",
   "dateModified": "2025-12-01T00:00:00Z",
@@ -282,7 +282,12 @@
       <div class="admonition-content">
         <p><strong>Testing</strong>: Giscus only works on the domain you configured in the GitHub App settings. If it doesn&rsquo;t show up on <code>localhost</code>, check your &ldquo;Discussion Mapping&rdquo; settings or ensure <code>giscus.app</code> is allowed in your CSP.</p>
       </div>
-    </div>
+    </div><h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li><strong>Official Website</strong>: <a href="https://giscus.app/">giscus.app</a> - Documentation and configuration tool.</li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/giscus/giscus">giscus/giscus</a> - Source code and advanced usage.</li>
+</ul>
+
 
   </div>
 
@@ -294,10 +299,10 @@
       <li><a href="https://thehomelab.lol/tags/guide/">Guide</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="https://thehomelab.lol/guides/202510330_pihole/">
+  <a class="next" href="https://thehomelab.lol/guides/20251201_hugo_callouts/">
     <span class="title">Next »</span>
     <br>
-    <span>Setting up Pi-hole</span>
+    <span>Using Callouts in Hugo</span>
   </a>
 </nav>
 

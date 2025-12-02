@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Hugo on TheHomeLab</title>
-    <link>https://thehomelab.lol/tags/hugo/</link>
-    <description>Recent content in Hugo on TheHomeLab</description>
+    <title>Callouts on TheHomeLab</title>
+    <link>https://thehomelab.lol/tags/callouts/</link>
+    <description>Recent content in Callouts on TheHomeLab</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thehomelab.lol/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Adding Giscus Comments to Hugo</title>
-      <link>https://thehomelab.lol/guides/20251201_hugo_giscus_comments/</link>
-      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://thehomelab.lol/guides/20251201_hugo_giscus_comments/</guid>
-      <description>A step-by-step guide to integrating GitHub Discussions-based comments into your Hugo site using Giscus.</description>
-    </item>
+    <atom:link href="https://thehomelab.lol/tags/callouts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Callouts in Hugo</title>
       <link>https://thehomelab.lol/guides/20251201_hugo_callouts/</link>
