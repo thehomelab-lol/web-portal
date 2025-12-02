@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Guides on TheHomeLab</title>
-    <link>https://thehomelab.lol/guides/</link>
-    <description>Recent content in Guides on TheHomeLab</description>
+    <title>Comments on TheHomeLab</title>
+    <link>https://thehomelab.lol/tags/comments/</link>
+    <description>Recent content in Comments on TheHomeLab</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thehomelab.lol/guides/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://thehomelab.lol/tags/comments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding Giscus Comments to Hugo</title>
       <link>https://thehomelab.lol/guides/20251201_hugo_giscus_comments/</link>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://thehomelab.lol/guides/20251201_hugo_giscus_comments/</guid>
       <description>A step-by-step guide to integrating GitHub Discussions-based comments into your Hugo site using Giscus.</description>
-    </item>
-    <item>
-      <title>Setting up Pi-hole</title>
-      <link>https://thehomelab.lol/guides/202510330_pihole/</link>
-      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://thehomelab.lol/guides/202510330_pihole/</guid>
-      <description>A guide on setting up Pi-hole for network-wide ad blocking.</description>
     </item>
   </channel>
 </rss>
