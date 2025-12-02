@@ -13,6 +13,29 @@ tags: ["hugo", "markdown", "guide", "callouts"]
 
 Callouts (also known as Admonitions or Alerts) are a great way to highlight important information, warnings, or tips in your documentation. This site supports **GitHub-flavored alerts** with some extra superpowers.
 
+## Installation
+
+To enable callouts, we use the `hugo-admonitions` theme component.
+
+### 1. Clone the Repository
+
+Clone the theme into your `themes` directory:
+
+```bash
+git clone https://github.com/KKKZOZ/hugo-admonitions themes/hugo-admonitions
+```
+
+### 2. Configure Hugo
+
+Add `hugo-admonitions` to your `hugo.toml` file.
+
+> [!IMPORTANT]
+> **Theme Order Matters**: You must list `hugo-admonitions` **before** your main theme (e.g., `PaperMod`) in the configuration. This ensures the CSS is loaded correctly.
+
+```toml
+theme = ["hugo-admonitions", "PaperMod"]
+```
+
 ## Basic Syntax
 
 To create a callout, use the standard blockquote syntax `>` followed by `[!TYPE]`.
