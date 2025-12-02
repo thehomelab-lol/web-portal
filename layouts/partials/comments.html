@@ -1,0 +1,14 @@
+{{- /* Comments area start */ -}}
+{{- if .Site.Params.comments.enabled }}
+<script src="https://giscus.app/client.js" data-repo="{{ .Site.Params.comments.repo }}"
+    data-repo-id="{{ .Site.Params.comments.repoId }}" data-category="{{ .Site.Params.comments.category }}"
+    data-category-id="{{ .Site.Params.comments.categoryId }}" data-mapping="{{ .Site.Params.comments.mapping | default "
+    pathname" }}" data-strict="{{ .Site.Params.comments.strict | default " 0" }}"
+    data-reactions-enabled="{{ .Site.Params.comments.reactionsEnabled | default " 1" }}"
+    data-emit-metadata="{{ .Site.Params.comments.emitMetadata | default " 0" }}"
+    data-input-position="{{ .Site.Params.comments.inputPosition | default " bottom" }}"
+    data-theme="{{ .Site.Params.comments.theme | default " preferred_color_scheme" }}"
+    data-lang="{{ .Site.Params.comments.lang | default " en" }}" crossorigin="anonymous" async>
+    </script>
+{{- end }}
+{{- /* Comments area end */ -}}
