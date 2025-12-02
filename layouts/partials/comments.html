@@ -30,7 +30,8 @@
         mutations.forEach((mutation) => {
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                 const isDark = document.body.classList.contains('dark');
-                const giscusTheme = isDark ? 'dark' : 'light';
+                // Map to Giscus themes.
+                const giscusTheme = isDark ? 'catppuccin_frappe' : 'catppuccin_latte';
                 setGiscusTheme(giscusTheme);
             }
         });

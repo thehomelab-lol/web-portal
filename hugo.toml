@@ -28,16 +28,16 @@ theme = ["hugo-admonitions", "PaperMod"]
 
 [params.comments]
   enabled = true
-  repo = "ENTER_REPO_HERE" # e.g. "username/repo"
-  repoId = "ENTER_REPO_ID_HERE"
-  category = "ENTER_CATEGORY_HERE"
-  categoryId = "ENTER_CATEGORY_ID_HERE"
+  repo = "thehomelab-lol/web-portal"
+  repoId = "R_kgDOQf7Sww"
+  category = "Announcements"
+  categoryId = "DIC_kwDOQf7Sw84CzRay"
   mapping = "pathname"
   strict = "0"
   reactionsEnabled = "1"
   emitMetadata = "0"
-  inputPosition = "bottom"
-  theme = "preferred_color_scheme"
+  inputPosition = "top"
+  theme = "catppuccin_frappe"
   lang = "en"
 
 [menu]
