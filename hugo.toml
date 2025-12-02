@@ -20,7 +20,7 @@ theme = ["hugo-admonitions", "PaperMod"]
   ShowBreadCrumbs = true
   ShowShareButtons = false
   # CHECK THIS URL: Ensure 'web-portal' is the actual name of your repo
-  editPost = { URL = "https://github.com/TheHomelabLOL/web-portal/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
+  editPost = { URL = "https://github.com/thehomelab-lol/web-portal/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
 
 [params.assets]
   # ensure you have a logo.png in your 'static' folder, or comment this out
