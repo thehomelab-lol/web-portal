@@ -3,11 +3,7 @@ title: "Using Callouts in Hugo"
 date: 2025-12-01
 draft: false
 summary: "A comprehensive guide to using GitHub-style alerts and callouts in your markdown content."
-cover:
-    image: "callouts_cover.png"
-    alt: "Callouts Guide"
-    caption: "Enhance your documentation with rich alerts"
-    relative: true
+thumbnail: "callouts_cover.png"
 tags: ["hugo", "markdown", "guide", "callouts"]
 ---
 

@@ -1,68 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://thehomelab.lol/guides/20251201_hugo_giscus_comments/</loc>
+    <loc>http://localhost:1313/guides/dotfiles/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/stow/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/komodo_github/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/20251201_hugo_giscus_comments/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/callouts/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/comments/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/giscus/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/20251201_hugo_callouts/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/guide/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/guides/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/hugo/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/markdown/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/guides/20251201_hugo_callouts/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/gear/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/gear/</loc>
     <lastmod>2023-11-30T10:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/hardware/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/gear/20251130_hardware/</loc>
     <lastmod>2023-11-30T10:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/homelab/</loc>
-    <lastmod>2023-11-30T10:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/tags/infrastructure/</loc>
-    <lastmod>2023-11-30T10:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/gear/20251130_hardware/</loc>
-    <lastmod>2023-11-30T10:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/guides/202510330_pihole/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/guides/202510330_pihole/</loc>
     <lastmod>2023-11-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/stack/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/stack/</loc>
     <lastmod>2023-11-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/stack/stack_2025/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/stack/stack_2025/</loc>
     <lastmod>2023-11-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thehomelab.lol/blog/ai_editor/</loc>
-  </url><url>
-    <loc>https://thehomelab.lol/blog/</loc>
-  </url><url>
-    <loc>https://thehomelab.lol/categories/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/ai_editor/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/sponsor/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/zigbee_lightbulbs/</loc>
   </url>
 </urlset>

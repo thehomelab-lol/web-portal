@@ -1,0 +1,10 @@
+/* Let the animated background colors show through Blowfish's overlays */
+#background-image {
+  filter: saturate(2) brightness(1.6);
+}
+
+/* Reduce the dark gradient overlays that wash out background colors */
+.noprose > div[class*="from-neutral"],
+[class*="single_hero"] > div {
+  opacity: 0.25 !important;
+}

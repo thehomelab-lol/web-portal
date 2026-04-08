@@ -1,62 +1,39 @@
-{{- /* Comments area start */ -}}
-{{- if .Site.Params.comments.enabled }}
-<script src="https://giscus.app/client.js" data-repo='{{ .Site.Params.comments.repo }}'
-    data-repo-id='{{ .Site.Params.comments.repoId }}' data-category='{{ .Site.Params.comments.category }}'
-    data-category-id='{{ .Site.Params.comments.categoryId }}'
-    data-mapping='{{ .Site.Params.comments.mapping | default "pathname" }}'
-    data-strict='{{ .Site.Params.comments.strict | default "0" }}'
-    data-reactions-enabled='{{ .Site.Params.comments.reactionsEnabled | default "1" }}'
-    data-emit-metadata='{{ .Site.Params.comments.emitMetadata | default "0" }}'
-    data-input-position='{{ .Site.Params.comments.inputPosition | default "bottom" }}'
-    data-theme='{{ .Site.Params.comments.theme | default "preferred_color_scheme" }}'
-    data-lang='{{ .Site.Params.comments.lang | default "en" }}' data-loading='lazy' crossorigin='anonymous' async>
-    </script>
+{{- $giscus := .Site.Params.giscus -}}
+{{- if and $giscus $giscus.repo }}
+<script src="https://giscus.app/client.js"
+    data-repo="{{ $giscus.repo }}"
+    data-repo-id="{{ $giscus.repoId }}"
+    data-category="{{ $giscus.category }}"
+    data-category-id="{{ $giscus.categoryId }}"
+    data-mapping="{{ $giscus.mapping | default "pathname" }}"
+    data-strict="{{ $giscus.strict | default "0" }}"
+    data-reactions-enabled="{{ $giscus.reactionsEnabled | default "1" }}"
+    data-emit-metadata="{{ $giscus.emitMetadata | default "0" }}"
+    data-input-position="{{ $giscus.inputPosition | default "bottom" }}"
+    data-theme="{{ $giscus.darkTheme | default "dark" }}"
+    data-lang="{{ $giscus.lang | default "en" }}"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
 
 <script>
-    // Dynamic theme switching for Giscus
+    const GISCUS_LIGHT = "{{ $giscus.lightTheme | default "light" }}";
+    const GISCUS_DARK  = "{{ $giscus.darkTheme  | default "dark" }}";
+
     function setGiscusTheme(theme) {
-        const iframe = document.querySelector('iframe.giscus-frame');
+        const iframe = document.querySelector("iframe.giscus-frame");
         if (!iframe) return;
-        const message = {
-            setConfig: {
-                theme: theme
-            }
-        };
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, "https://giscus.app");
     }
 
-    // Helper to determine the current theme
-    function getGiscusTheme() {
-        const isDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
-        return isDark ? 'catppuccin_frappe' : 'catppuccin_latte';
+    function currentTheme() {
+        return document.documentElement.classList.contains("dark") ? GISCUS_DARK : GISCUS_LIGHT;
     }
 
-    // Listen for theme toggle events from PaperMod
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                setGiscusTheme(getGiscusTheme());
-            }
-        });
-    });
+    new MutationObserver(() => setGiscusTheme(currentTheme()))
+        .observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-    // Start observing
-    observer.observe(document.body, { attributes: true });
-    observer.observe(document.documentElement, { attributes: true });
-
-    // Set initial theme
-    // We wait a tick to ensure the DOM is fully settled and Giscus iframe is ready to receive messages
-    // though the iframe onload might be better, this is a reasonable attempt for now.
-    // Actually, we can just call it; if the iframe isn't ready, the function checks for it.
-    // But since the script is async, the iframe might not be there yet. 
-    // The Giscus script loads the iframe.
-    // We can try setting it after a short delay or just rely on the default config for initial load
-    // and only update on changes. 
-    // However, if the user starts in Light mode but config says Dark, we want to fix it.
-    // Let's try to set it once DOM is ready.
-    document.addEventListener('DOMContentLoaded', () => {
-        setGiscusTheme(getGiscusTheme());
-    });
+    document.addEventListener("DOMContentLoaded", () => setGiscusTheme(currentTheme()));
 </script>
 {{- end }}
-{{- /* Comments area end */ -}}

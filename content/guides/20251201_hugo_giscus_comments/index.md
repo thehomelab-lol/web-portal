@@ -3,11 +3,7 @@ title: "Adding Giscus Comments to Hugo"
 date: 2025-12-01
 draft: false
 summary: "A step-by-step guide to integrating GitHub Discussions-based comments into your Hugo site using Giscus."
-cover:
-    image: "giscus_cover.png"
-    alt: "Giscus Comments"
-    caption: "Open Source Comments for Static Sites"
-    relative: true
+thumbnail: "giscus_cover.png"
 tags: ["hugo", "giscus", "comments", "guide"]
 ---
 

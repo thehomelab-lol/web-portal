@@ -3,7 +3,7 @@ title: "The Stack: Software & Services"
 date: 2023-11-30
 draft: false
 summary: "A breakdown of the 25+ Docker services running on the QNAP NAS, managed via Dockflare and Gluetun."
-showToc: true
+showTableOfContents: true
 ---
 
 The core philosophy of the lab is **"Everything as Code."**

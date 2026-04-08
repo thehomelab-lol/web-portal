@@ -1,44 +1,108 @@
 baseURL = "https://thehomelab.lol/"
-languageCode = "en-us"
-title = "TheHomeLab"
-theme = ["hugo-admonitions", "PaperMod"]
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+paginate = 10
+
+[module]
+  [[module.imports]]
+    path = "github.com/nunocoracao/blowfish/v2"
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+    [[module.imports.mounts]]
+      source = "i18n"
+      target = "i18n"
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+    [[module.imports.mounts]]
+      source = "static"
+      target = "static"
+  [[module.imports]]
+    path = "github.com/KKKZOZ/hugo-admonitions"
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
 
 [markup]
   [markup.highlight]
-    noClasses = false
-    style = "cobalt"
+    noClasses = true
+    style = "dracula"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    title = "TheHomeLab"
+
+    [languages.en.params]
+      description = "Everything as Code. Self-hosting, Docker, homelab infrastructure, and 3D printing."
+
+      [languages.en.params.author]
+        name = "TheHomeLab"
+        headline = "Everything as Code."
+        bio = "Documenting the journey of self-hosting, Docker, and enterprise gear at home — including 3D printing for the lab."
+        links = [
+          { name = "github", url = "https://github.com/TheHomelab-LOL" },
+          { name = "youtube", url = "https://youtube.com/@thehomelablol" },
+        ]
 
 [params]
-  defaultTheme = "dark"
-  ShowCodeCopyButtons = true
-  # Only show "News" and "Tutorials" in the homepage feed.
-  # We exclude "stack" and "gear" because those are static reference pages.
+  colorScheme = "slate"
+  defaultAppearance = "dark"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
   mainSections = ["blog", "guides"]
 
-  # "Suggest edits to this page on GitHub" configuration
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowShareButtons = false
-  # CHECK THIS URL: Ensure 'web-portal' is the actual name of your repo
-  editPost = { URL = "https://github.com/thehomelab-lol/web-portal/edit/main/content", Text = "Edit this page on GitHub", appendFilePath = true }
+  [params.homepage]
+    layout = "background"
+    homepageImage = "img/background.svg"
+    showRecent = true
+    showRecentItems = 6
+    showMoreLink = true
+    showMoreLinkDest = "/blog"
 
-[params.assets]
-  # ensure you have a logo.png in your 'static' folder, or comment this out
-  favicon = "/logo.png"
+  [params.article]
+    showDate = true
+    showReadingTime = true
+    showTableOfContents = true
+    showEdit = true
+    editURL = "https://github.com/thehomelab-lol/web-portal/edit/main/content"
+    editAppendPath = true
+    showBreadcrumbs = true
+    showComments = true
 
-[params.comments]
-  enabled = true
-  repo = "thehomelab-lol/web-portal"
-  repoId = "R_kgDOQf7Sww"
-  category = "Announcements"
-  categoryId = "DIC_kwDOQf7Sw84CzRay"
-  mapping = "pathname"
-  strict = "0"
-  reactionsEnabled = "1"
-  emitMetadata = "0"
-  inputPosition = "top"
-  theme = "catppuccin_frappe"
-  lang = "en"
+  [params.list]
+    showSummary = true
+    showBreadcrumbs = true
+    groupByYear = false
+
+  [params.footer]
+    showCopyright = true
+
+  [params.comments]
+    provider = "giscus"
+
+  [params.giscus]
+    repo = "thehomelab-lol/web-portal"
+    repoId = "R_kgDOQf7Sww"
+    category = "Announcements"
+    categoryId = "DIC_kwDOQf7Sw84CzRay"
+    mapping = "pathname"
+    strict = "0"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "top"
+    lang = "en"
+    lightTheme = "catppuccin_latte"
+    darkTheme = "catppuccin_frappe"
 
 [menu]
   [[menu.main]]
@@ -61,38 +125,8 @@ theme = ["hugo-admonitions", "PaperMod"]
     name = "Stack"
     url = "/stack/"
     weight = 40
-
-[params.homeInfoParams]
-  Title = "TheHomeLab.lol"
-  Content = "Everything as Code. Documenting the journey of self-hosting, Docker, and enterprise gear at home."
-
-[params.profileMode]
-  enabled = false
-  title = "TheHomeLab.lol"
-  subtitle = "Everything as Code. Documenting the journey of self-hosting, Docker, and enterprise gear at home."
-  imageUrl = "logo.png" # Requires 'static/logo.png'
-  imageTitle = "The Lab"
-  imageWidth = 150
-  imageHeight = 150
-
-  # These are the big buttons under your bio
-  [[params.profileMode.buttons]]
-    name = "The Stack"
-    url = "/stack"
-  [[params.profileMode.buttons]]
-    name = "Hardware Gear"
-    url = "/gear"
-  [[params.profileMode.buttons]]
-    name = "YouTube Channel"
-    url = "https://youtube.com/@YourChannel"
-
-# Social Icons (appear at the bottom of the card)
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/TheHomelab-LOL"
-[[params.socialIcons]]
-  name = "youtube"
-  url = "https://youtube.com/@YourChannel"
-[[params.socialIcons]]
-  name = "twitter" # or "x"
-  url = "https://x.com/YourHandle"
+  [[menu.main]]
+    identifier = "sponsor"
+    name = "Sponsor"
+    url = "/sponsor/"
+    weight = 50
