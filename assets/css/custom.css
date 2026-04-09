@@ -1,3 +1,14 @@
+/* Show animated background on all pages (not just homepage) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('/img/background.svg') center / cover no-repeat;
+  filter: saturate(2) brightness(1.6);
+  pointer-events: none;
+}
+
 /* Let the animated background colors show through Blowfish's overlays */
 #background-image {
   filter: saturate(2) brightness(1.6);

@@ -1,6 +1,9 @@
 baseURL = "https://thehomelab.lol/"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 [pagination]
   pagerSize = 10
 
@@ -50,7 +53,7 @@ enableRobotsTXT = true
         headline = "Build, Break...Figure it out?"
         bio = ""
         links = [
-          { name = "github", url = "https://github.com/TheHomelab-LOL" },
+          { name = "github", url = "https://github.com/thehomelab/stack-lab" },
           { name = "code", url = "https://github.com/thehomelab-lol/lab-stacks" },
           { name = "youtube", url = "https://youtube.com/@thehomelablol" },
           { name = "linkedin", url = "https://www.linkedin.com/in/davidrusho" },

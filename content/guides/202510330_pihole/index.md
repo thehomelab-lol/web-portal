@@ -4,6 +4,8 @@ date: 2023-11-30
 draft: false
 summary: "A guide on setting up Pi-hole for network-wide ad blocking."
 thumbnail: "cover.png"
+authors:
+  - "david-rusho"
 ---
 
 
