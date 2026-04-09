@@ -47,7 +47,7 @@ enableRobotsTXT = true
 
       [languages.en.params.author]
         name = "TheHomeLab"
-        headline = "Build, break, figure it out?"
+        headline = "Build, Break...Figure it out?"
         bio = ""
         links = [
           { name = "github", url = "https://github.com/TheHomelab-LOL" },
