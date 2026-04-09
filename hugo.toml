@@ -51,6 +51,7 @@ enableRobotsTXT = true
         bio = ""
         links = [
           { name = "github", url = "https://github.com/TheHomelab-LOL" },
+          { name = "code", url = "https://github.com/thehomelab-lol/lab-stacks" },
           { name = "youtube", url = "https://youtube.com/@thehomelablol" },
           { name = "linkedin", url = "https://www.linkedin.com/in/davidrusho" },
         ]
