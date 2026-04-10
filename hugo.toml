@@ -53,10 +53,10 @@ enableRobotsTXT = true
         headline = "Build, Break...Figure it out?"
         bio = ""
         links = [
-          { name = "github", url = "https://github.com/thehomelab/stack-lab" },
-          { name = "code", url = "https://github.com/thehomelab-lol/lab-stacks" },
-          { name = "youtube", url = "https://youtube.com/@thehomelablol" },
-          { name = "linkedin", url = "https://www.linkedin.com/in/davidrusho" },
+          { github = "https://github.com/thehomelab/stack-lab" },
+          { code = "https://github.com/thehomelab-lol/lab-stacks" },
+          { youtube = "https://youtube.com/@thehomelablol" },
+          { linkedin = "https://www.linkedin.com/in/davidrusho" },
         ]
 
 [params]
@@ -84,6 +84,7 @@ enableRobotsTXT = true
     editAppendPath = true
     showBreadcrumbs = true
     showComments = true
+    showAuthor = false
 
   [params.list]
     showSummary = true
