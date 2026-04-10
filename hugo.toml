@@ -66,6 +66,7 @@ enableRobotsTXT = true
   enableSearch = true
   enableCodeCopy = true
   mainSections = ["blog", "guides"]
+  defaultBackgroundImage = "img/background.svg"
 
   [params.homepage]
     layout = "background"
@@ -85,11 +86,15 @@ enableRobotsTXT = true
     showBreadcrumbs = true
     showComments = true
     showAuthor = false
+    showHero = true
+    heroStyle = "background"
 
   [params.list]
     showSummary = true
     showBreadcrumbs = true
     groupByYear = false
+    showHero = true
+    heroStyle = "background"
 
   [params.footer]
     showCopyright = true
