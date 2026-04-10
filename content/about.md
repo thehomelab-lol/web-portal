@@ -7,6 +7,8 @@ showDate: false
 showReadingTime: false
 showEdit: false
 showComments: false
+showHero: true
+heroStyle: "background"
 ---
 
 Hi, I'm David. My background is in acrobatics and live theater. I spent years working internationally, including a stint as Tarzan at Hong Kong Disneyland. These days my tinkering happens in a different arena.

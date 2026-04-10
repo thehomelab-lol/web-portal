@@ -6,6 +6,8 @@ showReadingTime: false
 showEdit: false
 showComments: false
 showTableOfContents: true
+showHero: true
+heroStyle: "background"
 ---
 
 ## Who We Are

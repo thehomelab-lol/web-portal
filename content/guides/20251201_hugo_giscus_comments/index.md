@@ -7,6 +7,8 @@ thumbnail: "giscus_cover.png"
 tags: ["hugo", "giscus", "comments", "guide"]
 authors:
   - "david-rusho"
+showDate: true
+showReadingTime: true
 ---
 
 Adding a comment section to a static site can be tricky. You want something that is low maintenance, spam-free, and doesn't track your users. [Giscus](https://giscus.app) checks all these boxes by leveraging **GitHub Discussions** to store comments.

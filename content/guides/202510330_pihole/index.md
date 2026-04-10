@@ -6,6 +6,8 @@ summary: "A guide on setting up Pi-hole for network-wide ad blocking."
 thumbnail: "cover.png"
 authors:
   - "david-rusho"
+showDate: true
+showReadingTime: true
 ---
 
 

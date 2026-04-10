@@ -8,6 +8,8 @@ showEdit: false
 showPagination: false
 showAuthor: false
 layout: "simple"
+showHero: true
+heroStyle: "background"
 ---
 
 A running list of the hardware I use and recommend. Affiliate links coming soon.

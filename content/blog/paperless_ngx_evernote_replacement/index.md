@@ -6,6 +6,8 @@ summary: "How I replaced a $130/year Evernote subscription with a self-hosted Pa
 tags: ["paperless-ngx", "homelab", "selfhost", "github", "ci/cd", "docker", "gitops"]
 authors:
   - "david-rusho"
+showDate: true
+showReadingTime: true
 ---
 
 I've been an Evernote user since 2010. Back then, a yearly subscription was about $45. It was indispensable while I was backpacking across Asia, giving me instant access to scanned passports, receipts, and tickets in India, Singapore, and Japan. Having critical documents on hand, anywhere in the world, was a lifesaver.

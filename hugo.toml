@@ -78,17 +78,14 @@ enableRobotsTXT = true
     layoutBackgroundBlur = true
 
   [params.article]
-    showDate = true
-    showReadingTime = true
+    showDate = false
+    showReadingTime = false
     showTableOfContents = true
-    showEdit = true
-    editURL = "https://github.com/thehomelab-lol/web-portal/edit/main/content"
-    editAppendPath = true
+    showEdit = false
     showBreadcrumbs = true
     showComments = true
     showAuthor = false
-    showHero = true
-    heroStyle = "background"
+    showHero = false
     layoutBackgroundHeaderSpace = false
 
   [params.list]

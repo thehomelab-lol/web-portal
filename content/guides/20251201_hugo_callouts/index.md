@@ -7,6 +7,8 @@ thumbnail: "callouts_cover.png"
 tags: ["hugo", "markdown", "guide", "callouts"]
 authors:
   - "david-rusho"
+showDate: true
+showReadingTime: true
 ---
 
 Callouts (also known as Admonitions or Alerts) are a great way to highlight important information, warnings, or tips in your documentation. This site supports **GitHub-flavored alerts** with some extra superpowers.
