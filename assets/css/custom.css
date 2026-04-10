@@ -1,10 +1,10 @@
-/* Let the animated background colors show through Blowfish's overlays */
+/* Boost animated SVG background colors */
 #background-image {
   filter: saturate(2) brightness(1.6);
 }
 
-/* Reduce the dark gradient overlays that wash out background colors */
-.noprose > div[class*="from-neutral"],
-[class*="single_hero"] > div {
-  opacity: 0.25 !important;
+/* Extend hero background to full viewport height (default is 800px, causes dark bar at bottom) */
+.single_hero_background {
+  height: 100vh !important;
+  height: 100dvh !important;
 }

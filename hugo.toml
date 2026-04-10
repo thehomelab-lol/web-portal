@@ -75,6 +75,7 @@ enableRobotsTXT = true
     showRecentItems = 6
     showMoreLink = true
     showMoreLinkDest = "/blog"
+    layoutBackgroundBlur = true
 
   [params.article]
     showDate = true
@@ -88,6 +89,7 @@ enableRobotsTXT = true
     showAuthor = false
     showHero = true
     heroStyle = "background"
+    layoutBackgroundHeaderSpace = false
 
   [params.list]
     showSummary = true
@@ -95,6 +97,7 @@ enableRobotsTXT = true
     groupByYear = false
     showHero = true
     heroStyle = "background"
+    layoutBackgroundHeaderSpace = false
 
   [params.footer]
     showCopyright = true
